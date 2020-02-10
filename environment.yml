@@ -6,7 +6,6 @@ dependencies:
   - intelpython3_full
   - jupyter
   - pip
-  - python=3.6
   - sphinx
   - yaml
   - zlib
