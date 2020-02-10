@@ -3,7 +3,7 @@ channels:
   - intel
   - defaults
 dependencies:
-  - intelpython_full
+  - intelpython3_full
   - jupyter
   - pip
   - python=3.6
