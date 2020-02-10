@@ -1,0 +1,27 @@
+name: intel
+channels:
+  - intel
+  - defaults
+dependencies:
+  - intelpython_full
+  - jupyter
+  - pip
+  - python=3.6
+  - sphinx
+  - yaml
+  - zlib
+  - zope
+  - zope.interface
+  - pip:
+    - dacite
+    - dataclasses
+    - gitdb2
+    - gitpython
+    - intel-tensorflow
+    - public
+    - smmap2
+    - sphinx-git
+    - sphinx-rtd-theme
+    - ray
+    - tables
+
