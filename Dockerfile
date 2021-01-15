@@ -1,6 +1,8 @@
-ARG PYTHON_VERSION=3.6
-
 FROM continuumio/miniconda3
+ARG PYTHON_VERSION=3.6
+#ENV PYTHON_VERSION=v1.0.0
+
+RUN echo "Using python $PYTHON_VERSION ..."
 
 COPY environment.yml /src/environment.yml
 
@@ -8,7 +10,7 @@ WORKDIR /src
 RUN apt-get update
 RUN apt-get install -y gcc
 
-RUN conda create --yes -n intel -c intel python=${PYTHON_VERSION} intelpython3_full
+RUN conda create --yes -n intel -c intel python=$PYTHON_VERSION intelpython3_full
 RUN conda env update -f environment.yml
 RUN conda config --set auto_activate_base true
 
