@@ -1,3 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-docker build --build-arg PYTHON_VERSION=$PYTHON_VERSION -t $IMAGE_NAME .
+if [ ${PYTHON_VERSION} == '' ]
+then
+  PYTHON_VERSION=3.6
+fi
+
+docker build --build-arg PYTHON_VERSION=${PYTHON_VERSION} -t $IMAGE_NAME .
+
