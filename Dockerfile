@@ -1,12 +1,17 @@
 FROM continuumio/miniconda3
+ARG PYTHON_VERSION=3.6
+
+RUN echo "Using python $PYTHON_VERSION ..."
 
 COPY environment.yml /src/environment.yml
 
 WORKDIR /src
+
 RUN apt-get update
 RUN apt-get install -y gcc
 
-RUN conda env create --file environment.yml
+RUN conda create --yes -n intel -c intel python=$PYTHON_VERSION intelpython3_full
+RUN conda env update -f environment.yml
 RUN conda config --set auto_activate_base true
 
 RUN conda run -n intel pip install ray || true
