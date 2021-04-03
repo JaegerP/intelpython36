@@ -8,7 +8,7 @@ COPY environment.yml /src/environment.yml
 WORKDIR /src
 
 RUN apt-get update
-RUN apt-get install -y gcc
+RUN apt-get install -y gcc build-essential
 
 RUN conda create --yes -n intel -c intel python=$PYTHON_VERSION intelpython3_full
 RUN conda env update -f environment.yml
